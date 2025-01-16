@@ -30,8 +30,8 @@ on:
   workflow_dispatch:
       inputs:
         description: description of input file
-        required: true
-        type             
+        required: false
+        type: string             
 
 jobs:
   build:
