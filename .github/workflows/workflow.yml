@@ -29,7 +29,7 @@ on:
     inputs:
       input1:
         description: 'Description of the input1'
-        required: 'false'
+        required: false
         type: 'string'
         default: 'default-value for input1'
         
@@ -37,7 +37,7 @@ on:
         description: Description of the input2
         required: false
         type: boolean
-        default: true
+        default: 'true'
       
             
 
