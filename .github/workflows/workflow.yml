@@ -1,8 +1,10 @@
 on:
 
+  repository_dispatch: 
+    types: [my_event]
 
-  schedule:
-    - cron: '*/10 * * * *'
+#  schedule:
+#    - cron: '*/10 * * * *'
 
 
   push:
@@ -70,25 +72,31 @@ jobs:
        echo "Print input2 ${{ github.event.inputs.input2 }}"
        echo "Print input2 ${{ github.event.inputs.input3 }}"
     
+    - name: Printing the webhook event
+      run: |
+      echo "Print the webhook"
+      echo "Received event type: ${{ github.event.action }}"
+      echo "Custom Payload: ${{ github.event.client_payload.key1 }}"
+    
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-
-    - name: Cache Maven dependencies
-      uses: actions/cache@v3
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-maven-
-
-    - name: Build with Maven
-      run: mvn clean install
-
-    - name: Run Tests
-      run: mvn test
+#    - name: Set up JDK 17
+#      uses: actions/setup-java@v3
+#      with:
+#        java-version: '17'
+#        distribution: 'temurin'
+#
+#    - name: Cache Maven dependencies
+#      uses: actions/cache@v3
+#      with:
+#        path: ~/.m2/repository
+#        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+#        restore-keys: |
+#          ${{ runner.os }}-maven-
+#
+#    - name: Build with Maven
+#      run: mvn clean install
+#
+#    - name: Run Tests
+#      run: mvn test
