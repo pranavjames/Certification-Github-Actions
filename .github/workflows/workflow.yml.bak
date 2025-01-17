@@ -37,8 +37,19 @@ on:
         description: Description of the input2
         required: false
         type: boolean
-        default: true
+        default: 'true' 
+      # or default: true => works
       
+      input3:
+        description: Description of the input3
+        required: false
+        type: choice
+        options: 
+          - choice1
+          - choice2
+          - choice3
+          
+        default: choice1
             
 
 jobs:
