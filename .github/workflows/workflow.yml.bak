@@ -62,6 +62,7 @@ jobs:
       run: |
        echo "Print input1 ${{ github.event.inputs.input1 }}"
        echo "Print input2 ${{ github.event.inputs.input2 }}"
+       echo "Print input2 ${{ github.event.inputs.input3 }}"
     
     - name: Checkout code
       uses: actions/checkout@v3
