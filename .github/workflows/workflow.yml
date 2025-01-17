@@ -74,9 +74,9 @@ jobs:
     
     - name: Printing the webhook event
       run: |
-      echo "Print the webhook"
-      echo "Received event type: ${{ github.event.action }}"
-      echo "Custom Payload: ${{ github.event.client_payload.key1 }}"
+        echo "Print the webhook"
+        echo "Received event type: ${{ github.event.action }}"
+        echo "Custom Payload: ${{ github.event.client_payload.key1 }}"
     
     - name: Checkout code
       uses: actions/checkout@v3
