@@ -49,7 +49,7 @@ on:
           - choice2
           - choice3
           
-        default: choice4
+        default: choice2
             
 
 jobs:
