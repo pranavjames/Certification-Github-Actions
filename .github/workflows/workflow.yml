@@ -77,6 +77,15 @@ jobs:
         echo "Print the webhook"
         echo "Received event type: ${{ github.event.action }}"
         echo "Custom Payload: ${{ github.event.client_payload.key1 }}"
+        
+    - name: Set Environment Variable
+      run: |
+        echo "MY_VAR=Hello World" >> $GITHUB_ENV
+        echo "YOUR_VAR=Bye World" >> $GITHUB_ENV
+      
+    - name: Use Environment Variable
+      run: echo $MY_VAR $YOUR_VAR  # This will output "Hello World" Bye World
+    
     
     - name: Checkout code
       uses: actions/checkout@v3
