@@ -11,4 +11,4 @@ jobs:
     steps:      
       - name: Deploy the application        
         run: |          
-        echo "Deploying the application because Workflow 1 passed." 
+          echo "Deploying the application because Workflow 1 passed." 
