@@ -4,7 +4,7 @@ name: Reusable Workflow
 on:
   workflow_call:  # This allows the workflow to be called from another workflow
     inputs:
-     message:
+    message:
         description: 'A message to print'
         required: true
         type: string
