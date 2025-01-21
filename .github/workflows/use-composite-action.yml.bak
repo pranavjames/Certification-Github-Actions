@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Call Print Message Action
-        uses: ./github/actions/print-message  # Reference the composite action
+        uses: actions/print-message@main  # Reference the composite action
         with:
           message: "Hello from the composite action!"
