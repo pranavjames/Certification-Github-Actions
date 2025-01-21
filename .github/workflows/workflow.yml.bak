@@ -63,6 +63,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      output_from_build_job: ${{ steps.output_step.outputs.output1 }}
+  
     env:
       MY_CUSTOM_ENV_VAR: 'This is a custom environment variable'
     
@@ -89,7 +92,11 @@ jobs:
     - name: Use Environment Variable
       run: echo $MY_VAR $YOUR_VAR  # This will output "Hello World" Bye World
     
-    
+    - name: Giving output
+      id: output_step
+      run: |
+        echo "output1=my_output_from_step" >> $GITHUB_ENV
+        
     - name: Checkout code
       uses: actions/checkout@v3
       
@@ -118,19 +125,22 @@ jobs:
 
   example_job:
     runs-on: ubuntu-latest
+    needs: build
 
     # Define environment variables at the job level
     env:
       CUSTOM_ENV_VAR: 'This is a custom environment variable'
+      OUTPUT_FROM_ABOVE_JOB: ${{ needs.build.outputs.output_from_build_job }}
 
     steps:
      
-      # 1. Access other synamically set  variable from another job
-      - name: Change the CUSTOM_ENV_VARIABLE
+      # 1. Access output from build job
+      - name: Accessing output from build job
+        
         run: |
-          echo "custom env variable $CUSTOM_ENV_VAR"
-          echo "$CUSTOM_ENV_VAR=\"this is from step1"\"
-          echo "custom env variable $CUSTOM_ENV_VAR"
+          echo 
+          
+         
      
      
       # 2. Display some default environment variables
