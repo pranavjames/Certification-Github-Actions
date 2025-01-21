@@ -95,7 +95,7 @@ jobs:
     - name: Giving output
       id: output_step
       run: |
-        echo "output1=my_output_from_step" >> $GITHUB_ENV
+        echo "output1=my_output_from_step" >> $GITHUB_OUTPUT    # remember to set $GITHUB_OUTPUT to send output
         
     - name: Checkout code
       uses: actions/checkout@v3

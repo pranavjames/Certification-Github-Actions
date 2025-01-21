@@ -95,7 +95,7 @@ jobs:
     - name: Giving output
       id: output_step
       run: |
-        echo "output1=my_output_from_step" >> $GITHUB_ENV
+        echo "output1=my_output_from_step" >> $GITHUB_OUTPUT
         
     - name: Checkout code
       uses: actions/checkout@v3
@@ -136,9 +136,8 @@ jobs:
      
       # 1. Access output from build job
       - name: Accessing output from build job
-        
         run: |
-          echo 
+          echo $OUTPUT_FROM_ABOVE_JOB
           
          
      
