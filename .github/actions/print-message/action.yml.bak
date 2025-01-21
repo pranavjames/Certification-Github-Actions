@@ -11,6 +11,10 @@ runs:
   steps:
     - name: Print the input message
           
-      shell: bash
+      shell: bash   # required property
       run: |
-        echo "The message is: ${{ inputs.message }}"    
+        echo "The message is: ${{ inputs.message }}"  
+
+    - name: Step2
+      run: |
+        echo "Step2 in custoom action"      
