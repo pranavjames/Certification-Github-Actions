@@ -129,7 +129,7 @@ jobs:
       - name: Change the CUSTOM_ENV_VARIABLE
         run: |
           echo "custom env variable $CUSTOM_ENV_VAR"
-          echo "$CUSTOM_ENV_VAR=\"this is from step1"\"
+          echo "CUSTOM_ENV_VAR=\"this is from step1"\"
           echo "custom env variable $CUSTOM_ENV_VAR"
      
      
