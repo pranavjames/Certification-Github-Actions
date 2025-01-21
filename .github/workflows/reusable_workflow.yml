@@ -1,0 +1,17 @@
+# .github/workflows/reusable-workflow.yml
+name: Reusable Workflow
+
+on:
+  workflow_call:  # This allows the workflow to be called from another workflow
+    inputs:
+      message:
+        description: 'A message to print'
+        required: true
+        type: string
+
+jobs:
+  print_message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print the input message
+        run: echo "The message is: ${{ inputs.message }}"

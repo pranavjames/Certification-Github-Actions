@@ -1,0 +1,13 @@
+# .github/workflows/main-workflow.yml
+name: Main Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call-reusable-workflow:
+    uses: ./.github/workflows/reusable_workflow.yml  # Call the reusable workflow
+    with:
+      message: 'Hello from the calling another workflow!'
