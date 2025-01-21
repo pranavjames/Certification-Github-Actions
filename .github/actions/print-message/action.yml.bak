@@ -1,0 +1,13 @@
+name: 'Print Message'
+description: 'A composite action to print a message'
+runs:
+  using: 'composite'
+  steps:
+    - name: Print the input message
+      inputs:
+        message:
+          description: 'A message to print'
+          required: true
+          
+      shell: bash
+      run: echo "The message is: ${{ inputs.message }}"    
