@@ -1,0 +1,21 @@
+name: Workflow 1 - Run Tests
+on:  
+  push:    
+    branches:      
+      - main
+      
+jobs:  
+   test:    
+     runs-on: ubuntu-latest    
+     steps:      
+         - name: Checkout Code        
+           uses: actions/checkout@v2      
+         
+         - name: Run Tests        
+           id: run_tests        
+           run: |          
+           echo "Running tests..."          # Simulate passing or failing tests          
+           exit 0  # Change to exit 1 to simulate a failure      
+           
+         - name: Set output for job1        
+           run: echo "::set-output name=test_status::${{ steps.run_tests.outcome }}" 
