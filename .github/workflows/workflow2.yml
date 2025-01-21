@@ -1,0 +1,14 @@
+name: Workflow 2 - Deploy
+on:  
+   workflow_run:    
+     workflows: ["Workflow 1 - Run Tests"]  # Name of the first workflow    
+       types:      
+         - completed
+jobs:  
+  deploy:    
+    runs-on: ubuntu-latest    
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}  # Check if Workflow 1 was successful    
+    steps:      
+      - name: Deploy the application        
+        run: |          
+        echo "Deploying the application because Workflow 1 passed." 
