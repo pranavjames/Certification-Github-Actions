@@ -130,6 +130,7 @@ jobs:
         run: |
           echo "custom env variable $CUSTOM_ENV_VAR"
           echo "$CUSTOM_ENV_VAR="this is from step1"
+          echo "custom env variable $CUSTOM_ENV_VAR"
      
      
       # 2. Display some default environment variables
