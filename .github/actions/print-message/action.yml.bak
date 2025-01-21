@@ -2,9 +2,9 @@ name: 'Print Message'
 description: 'A composite action to print a message'
 inputs:
   message:
-  description: 'A message to print'
-  required: false
-  default: "Default value of custom actions"
+    description: 'A message to print'
+    required: false
+    default: "Default value of custom actions"
           
 runs:
   using: 'composite'

@@ -13,4 +13,8 @@ runs:
           
       shell: bash
       run: |
-        echo "The message is: ${{ inputs.message }}"    
+        echo "The message is: ${{ inputs.message }}"  
+
+    - name: Step2
+      run: |
+        echo "Step2 in custoom action"      
