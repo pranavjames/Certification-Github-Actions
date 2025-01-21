@@ -8,6 +8,7 @@ on:
 
 jobs:
   call-reusable-workflow:
-    uses: ./.github/workflows/reusable_workflow.yml  # Call the reusable workflow
+    uses: pranavjames/Certification-Github-Actions/.github/workflows/reusable_workflow.yml  # Call the reusable workflow
+    # ./.github/workflows/reusable_workflow.yml
     with:
       message: 'Hello from the calling another workflow!'
