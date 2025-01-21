@@ -126,10 +126,11 @@ jobs:
     steps:
      
       # 1. Access other synamically set  variable from another job
-      - name: Access dynamically set variable fro another job
+      - name: Change the CUSTOM_ENV_VARIABLE
         run: |
-          echo "MY_VAR $MY_VAR"
-          echo "custom env variable $MY_CUSTOM_ENV_VAR"
+          echo "custom env variable $CUSTOM_ENV_VAR"
+          echo "$CUSTOM_ENV_VAR="this is from step1"
+          echo "custom env variable $CUSTOM_ENV_VAR"
      
      
       # 2. Display some default environment variables
