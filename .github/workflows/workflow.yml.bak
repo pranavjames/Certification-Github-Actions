@@ -129,7 +129,6 @@ jobs:
       - name: Access dynamically set variable fro another job
         run: |
           echo "MY_VAR $MY_VAR"
-          echo "custom env variable $MY_CUSTOM_ENV_VAR"
      
      
       # 2. Display some default environment variables
