@@ -1,9 +1,7 @@
 name: Branch1 pipeline
 on:
-  push:
-    branches:
-     - branch1
-  workflow_dispatch:
+  push: [ branch1 ]
+#  workflow_dispatch:
   
 jobs:
   job1:
