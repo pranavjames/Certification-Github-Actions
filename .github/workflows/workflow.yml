@@ -14,7 +14,8 @@ on:
       - '!sub-project/docs/**'
     
     branches:
-      - main    
+      - main  
+      - branch1      
       
  # you may only define one of branches and branches-ignore for a single event  same applies for tags
  
