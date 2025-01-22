@@ -3,10 +3,12 @@ on:
   push:
     branches:
      - branch1
+  workflow_dispatch:   
 jobs:
-   job1:
-     runs-on: ubuntu-latest
-     - name: step1 print all files
-       run: |
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: step1 print all files
+      run: |
          ls
       
