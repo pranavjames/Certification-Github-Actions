@@ -1,0 +1,13 @@
+name: Branch1 pipeline
+on:
+  push:
+    branches:
+     - branch1
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: step1 print all files
+      run: |
+         ls
+      
