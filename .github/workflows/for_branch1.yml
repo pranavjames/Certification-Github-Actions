@@ -3,7 +3,7 @@ name: Branch1 pipeline
 on:
   push:
     branches:
-      - branch1
+      - 'branch1'
 #  workflow_dispatch:  # Uncomment this if you want to allow manual triggering
 
 jobs:
