@@ -28,9 +28,10 @@ jobs:
             
             - name: Runner Environment Variables
               run: |
-
-                echo " ${{runner.os}}"
-                echo " ${{runner.temp}}"
-                echo " ${{runner.workspace}}"
-                echo " ${{runner.name}}"
+            
+                echo "os: ${{runner.os}}"
+                echo "temp: ${{runner.temp}}"
+                echo "workspace ${{runner.workspace}}"
+                echo "runner_name ${{runner.name}}"
+                echo "runner environment: $RUNNER_ENVIRONMENT"
                 
