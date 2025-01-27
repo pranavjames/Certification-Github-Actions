@@ -1,0 +1,25 @@
+name: Default env variables, accessing secrets, environment_variables
+
+on:
+  push:  
+  workflow_dispatch:
+
+jobs:
+    
+    job1:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Github Context Variables    
+              run: |
+                echo "runner_workspace: ${{ github.runner_workspace }}""
+                echo "workflow: ${{ github.workflow }}"                
+                echo "run_id: ${{ github.run_id }}"
+                echo "actor: ${{ github.actor }}"
+                echo "event_name: ${{ github.event_name }}"
+                echo "api_url: ${{ github.api_url }}"
+                echo "repository: ${{ github.repository }}"
+                echo "action: ${{ github.action }}"
+                echo "sha: ${{ github.sha }}"
+                echo "head_ref: ${{ github.head_ref }}"                
+                echo "event_path: ${{ github.event_path }}"
