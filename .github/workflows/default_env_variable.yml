@@ -34,4 +34,11 @@ jobs:
                 echo "workspace ${{runner.workspace}}"
                 echo "runner_name ${{runner.name}}"
                 echo "runner environment: $RUNNER_ENVIRONMENT"
+                echo "runner_tool_cache: $RUNNER_TOOL_CACHE"
+
+            - name: Step Info
+              run: |
+                echo  ${{ github.job}}
+                echo "step name ${{ step.name }}"
+
                 
