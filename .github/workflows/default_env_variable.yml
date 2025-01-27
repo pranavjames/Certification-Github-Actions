@@ -12,7 +12,6 @@ jobs:
         steps:
             - name: Github Context Variables    
               run: |
-                echo "trial github actor: $GITHUB_ACTOR"
                 echo "trial github actor: ${{ GITHUB_ACTOR }}"
                 # echo "runner_workspace: ${{ github.runner_workspace }}""
                 echo "workflow: ${{ github.workflow }}"                
