@@ -12,7 +12,10 @@ jobs:
         steps:
             - name: Github Context Variables    
               run: |
-                echo "runner_workspace: ${{ github.runner_workspace }}""
+                echo "trial github actor: ${{ GITHUB_ACTOR }}"
+                echo "trial github actor: $GITHUB_ACTOR"
+                echo "trial github actor: ${{ GITHUB_ACTOR }}"
+                # echo "runner_workspace: ${{ github.runner_workspace }}""
                 echo "workflow: ${{ github.workflow }}"                
                 echo "run_id: ${{ github.run_id }}"
                 echo "actor: ${{ github.actor }}"
@@ -21,5 +24,26 @@ jobs:
                 echo "repository: ${{ github.repository }}"
                 echo "action: ${{ github.action }}"
                 echo "sha: ${{ github.sha }}"
-                echo "head_ref: ${{ github.head_ref }}"                
+                # echo "head_ref: ${{ github.head_ref }}"                
                 echo "event_path: ${{ github.event_path }}"
+                echo "job name: ${{github.job}}"
+            
+            - name: Runner Environment Variables
+              run: |
+
+                echo " ${{runner.os}}"
+                echo " ${{runner.temp}}"
+                echo " ${{runner.workspace}}"
+                echo " ${{runner.name}}"
+                # echo " ${{runner.}}"
+                # echo " ${{runner.}}"
+                # echo " ${{runner.}}"
+                # echo " ${{runner.}}"
+                # echo " ${{runner.}}"              
+                # echo " ${{runner.}}"              
+                # echo " ${{runner.}}"
+                # echo " ${{runner.}}"
+                # echo " ${{runner.}}"
+                # echo " ${{runner.}}"
+
+
