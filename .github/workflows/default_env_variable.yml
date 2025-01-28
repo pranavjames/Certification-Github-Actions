@@ -84,13 +84,13 @@ jobs:
             - name: Compile and Package
               run: mvn clean install    
 
-            - name: Configure Maven settings
-              run: |
-                mkdir -p ~/.m2 && echo "<settings><servers><server><id>github</id><username>${{ github.actor }}</username><password>${{ secrets.GITHUB_TOKEN }}</password></server></servers></settings>" > ~/.m2/settings.xml
+            # - name: Configure Maven settings
+            #   run: |
+            #     mkdir -p ~/.m2 && echo "<settings><servers><server><id>github</id><username>${{ github.actor }}</username><password>${{ secrets.GITHUB_TOKEN }}</password></server></servers></settings>" > ~/.m2/settings.xml
 
             - name: Publishing package
               run: |
-                mvn --batch-mode deploy -e
+                mvn deploy
               env: 
                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}        
 
