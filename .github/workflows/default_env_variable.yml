@@ -38,7 +38,7 @@ jobs:
 
             - name: Information
               run: |
-                 echo "Hi there"
+                 echo "Hi there ${{ step.name }}"
                
 
  
