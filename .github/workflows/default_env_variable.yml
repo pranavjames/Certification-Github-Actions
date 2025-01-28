@@ -60,4 +60,11 @@ jobs:
                 echo "$jenv"
 
 
+            - name: Running a script
+              uses: actions/github-script@v5
+              with:
+                script: |
+                  console.log('Hello from GitHub Actions!');    
+
+
                
