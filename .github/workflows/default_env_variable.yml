@@ -36,7 +36,7 @@ jobs:
                 echo "runner environment: $RUNNER_ENVIRONMENT "
                 echo "runner_tool_cache: $RUNNER_TOOL_CACHE "
 
-            - name: Step-Info
+            - name: Information
               run: |
                 echo  ${{ github.job}}
                 echo "step name ${{ step.name }}"
