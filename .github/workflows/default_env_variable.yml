@@ -83,7 +83,16 @@ jobs:
               with:
                 distribution: 'temurin'
                 java-version: '21'
-            
+                
+            - name: Cache the maven dependency
+              uses: actions/cache@v2
+              with:
+                path: ~/.m2/repository
+                key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+                restore-keys: |
+                  ${{ runner.os }}-maven-    
+
+
             - name: Compile and Package
               run: mvn clean install    
 
