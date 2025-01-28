@@ -86,7 +86,7 @@ jobs:
 
             # - name: Configure Maven settings
             #   run: |
-            #     mkdir -p ~/.m2 && echo "<settings><servers><server><id>github</id><username>${{ github.actor }}</username><password>${{ secrets.GLOBAL_TOKEN }}</password></server></servers></settings>" > ~/.m2/settings.xml
+            #     mkdir -p ~/.m2 && echo "<settings><servers><server><id>github</id><username>pranavjames</username><password>${{ secrets.GLOBAL_TOKEN }}</password></server></servers></settings>" > ~/.m2/settings.xml
 
             - name: Publishing package
               run: |
