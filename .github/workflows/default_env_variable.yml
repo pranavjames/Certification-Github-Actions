@@ -4,6 +4,10 @@ on:
   push:  
   workflow_dispatch:
 
+permissions:
+  contents: read  # Allow read access to repository contents
+  packages: write
+
 env:
     env1: "Workflow Level env"
     wenv: "wenv for workflow env"
