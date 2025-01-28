@@ -38,7 +38,10 @@ jobs:
 
             - name: Information
               run: |
-                echo  ${{ github.job}}
-                echo "step name ${{ step.name }}"
+                 echo "Hi there"
+               
 
-                
+ 
+              
+# echo  ${{ github.job}}
+# echo "step name ${{ step.name }}"              
