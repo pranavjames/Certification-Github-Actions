@@ -6,7 +6,7 @@ on:
 
 permissions:
   contents: read  # Allow read access to repository contents
-  packages: [write, read]
+  packages: write
 
 env:
     env1: "Workflow Level env"
