@@ -6,7 +6,7 @@ on:
 
 permissions:
   contents: read  # Allow read access to repository contents
-  packages: write
+  packages: [write, read]
 
 env:
     env1: "Workflow Level env"
@@ -90,7 +90,7 @@ jobs:
 
             - name: Publishing package
               run: |
-                mvn --batch-mode deploy
+                mvn --batch-mode deploy -e
               env: 
                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}        
 
