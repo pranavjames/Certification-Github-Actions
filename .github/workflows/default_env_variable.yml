@@ -1,4 +1,4 @@
-name: Default env variables, accessing secrets, environment_variables
+name: Default env variables, accessing secrets, environment_variables, publishing packages
 
 on:
   push:  
@@ -65,6 +65,26 @@ jobs:
               with:
                 script: |
                   console.log('Hello from GitHub Actions!');    
+            
+
+
+            - name: Checkout Code
+              uses: actions/checkout@v4
+
+            - name: Setup Java
+              uses: actions/setup-java@v4
+              with:
+                distribution: 'temurin'
+                java-version: '21'
+            
+            - name: Compile and Package
+              run: mvn clean install    
+
+            - name: Publishing package
+              run: |
+                mvn --batch-mode deploy
+              env: 
+                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}        
 
 
                
