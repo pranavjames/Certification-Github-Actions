@@ -36,12 +36,9 @@ jobs:
                 echo "runner environment: $RUNNER_ENVIRONMENT "
                 echo "runner_tool_cache: $RUNNER_TOOL_CACHE "
 
-            - name: Information
+            - name: Step-Level env variable
+              env:
+                env1: "my env"
               run: |
-                 echo "Hi there ${{ step.name }}"
+                 echo "Hi there ${{env.env1}}"
                
-
- 
-              
-# echo  ${{ github.job}}
-# echo "step name ${{ step.name }}"              
